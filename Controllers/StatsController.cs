@@ -15,11 +15,9 @@ namespace WebApi.Controllers
         {
             Response response = new Response();
 
-            response.count_human_dna = 100;
-            response.count_mutant_dna = 40;
-            response.ratio = response.count_mutant_dna / response.count_human_dna;
+            response = new Database().GetStats();
+
             return response;
-            
         }
     }
 
@@ -28,5 +26,5 @@ namespace WebApi.Controllers
         public int count_mutant_dna;
         public int count_human_dna;
         public double ratio;
-}
+    }
 }
